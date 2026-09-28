@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lahore hospital appointment directory">
+<title>LahoreCare | Hospital Appointments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header"><div class="container nav"><a class="logo" href="#home"><span class="logo-icon">+</span><span><b>Lahore<span>Care</span></b><small>HOSPITAL APPOINTMENTS</small></span></a><button id="navToggle" class="nav-toggle">☰</button><nav id="mainNav"><a href="#doctors">Doctors</a><a href="#specialties">Specialties</a><a href="#services">Services</a><a href="#appointment" class="nav-button">Book a visit</a></nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy"><span class="location-tag">LAHORE · PUNJAB</span><h1>Healthcare appointments, <span>without the hassle.</span></h1><p>Find a specialist in Lahore, see clinic information, and request a convenient appointment from one straightforward directory.</p><div class="search-box"><div><label>Search</label><input id="heroSearch" placeholder="Doctor, specialty or clinic"></div><button id="heroFind">Search doctors <span>→</span></button></div><div class="trust-row"><span><b>32</b> specialists</span><i></i><span><b>20+</b> departments</span><i></i><span><b>PKR</b> clear fees</span></div></div><div class="hero-panel"><div class="panel-top"><span>LAHORE DIRECTORY</span><b>Open today</b></div><div class="panel-content"><div class="line"></div><h2>Choose care<br>that fits your day.</h2><div class="mini-list"><div><span class="mini-icon">01</span><p><b>Browse specialists</b><small>Cardiology, pediatrics, dermatology & more</small></p></div><div><span class="mini-icon">02</span><p><b>Check clinic details</b><small>Fees, timings, location and qualifications</small></p></div><div><span class="mini-icon">03</span><p><b>Request an appointment</b><small>Pick a date and preferred time</small></p></div></div></div><div class="panel-bottom">Serving patients across Lahore <span>↗</span></div></div></div></section>
+
+<section class="intro-strip"><div class="container"><div><small>LOCAL DIRECTORY</small><h2>One place for Lahore's specialist care.</h2></div><p>Use the directory to compare doctors by department, read their clinic information, and move directly to the appointment form.</p></div></section>
+
+<section class="section" id="doctors"><div class="container"><div class="section-title"><div><small>DOCTOR DIRECTORY</small><h2>Find a specialist.</h2><p>All doctors shown here are hospital available profiles for this website hospital.</p></div></div><div class="filter-row"><label>Specialty<select id="specialtyFilter"><option value="All">All specialties</option></select></label><label class="search-filter">Search<input id="doctorSearch" placeholder="Name, clinic or specialty"></label><button id="clearFilters">Reset</button></div><div class="result-line"><span id="resultCount"></span></div><div id="doctorGrid" class="doctor-grid"></div><div id="emptyState" class="empty-state hidden"><h3>No matching specialist</h3><p>Try a different department or search term.</p></div></div></section>
+
+<section class="section specialties" id="specialties"><div class="container"><div class="section-title"><div><small>DEPARTMENTS</small><h2>Specialist care by department.</h2></div></div><div id="specialtyGrid" class="specialty-grid"></div></div></section>
+
+<section class="section services" id="services"><div class="container service-layout"><div><small>HOSPITAL SERVICES</small><h2>Practical care,<br>all in one visit.</h2><p>From an outpatient consultation to diagnostic support and follow-up care, these are the core services represented in this hospital.</p></div><div class="service-table"><div><b>01</b><span>Outpatient consultations</span><small>Specialist & general physician visits</small></div><div><b>02</b><span>Laboratory & diagnostics</span><small>Blood tests, screening & imaging referrals</small></div><div><b>03</b><span>Women & child health</span><small>Gynecology, obstetrics & pediatrics</small></div><div><b>04</b><span>Follow-up visits</span><small>Review appointments and care planning</small></div></div></div></section>
+
+<section class="section appointment" id="appointment"><div class="container appointment-layout"><div class="appointment-intro"><small>APPOINTMENT REQUEST</small><h2>Tell us when you'd like to visit.</h2><p>Select a department and doctor, then enter the patient's details. This hospital saves the request in your browser.</p><div class="contact-box"><b>Appointment desk</b><span>+92 300 123 4567</span><small>Mon–Sat · 9:00 AM–8:00 PM</small></div></div><form id="appointmentForm"><div class="form-heading"><b>Patient & visit details</b><span>Lahore only</span></div><div class="form-grid"><label>Full name<input id="patientName" required placeholder="Full name"></label><label>Phone number<input id="patientPhone" required placeholder="+92 3XX XXXXXXX"></label><label>Age<input id="patientAge" type="number" required min="0" max="120" placeholder="Age"></label><label>CNIC <small>optional</small><input id="patientCnic" placeholder="XXXXX-XXXXXXX-X"></label><label>Specialty<select id="appointmentSpecialty" required><option value="">Select specialty</option></select></label><label>Doctor<select id="appointmentDoctor" required><option value="">Choose specialty first</option></select></label><label>Date<input id="appointmentDate" type="date" required></label><label>Time<select id="appointmentTime" required><option value="">Select time</option><option>09:00 AM</option><option>10:30 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>04:30 PM</option><option>06:00 PM</option><option>07:30 PM</option></select></label><label class="full">Reason for visit <small>optional</small><textarea id="patientReason" rows="3" placeholder="Briefly describe your concern"></textarea></label></div><label class="consent"><input type="checkbox" required> <span>I confirm the details are correct and can be contacted about this appointment request.</span></label><button class="submit-btn">Request appointment <span>→</span></button></form></div></section>
+</main>
+
+<footer><div class="container footer"><div class="logo"><span class="logo-icon">+</span><span><b>Lahore<span>Care</span></b><small>HOSPITAL APPOINTMENTS</small></span></div><p>Simple appointment discovery for Lahore.</p><span>© 2026 Hospital project</span></div></footer>
+<div id="doctorModal" class="modal hidden"><div class="modal-backdrop"></div><article class="modal-card"><button id="modalClose" class="modal-close">×</button><div id="modalContent"></div></article></div><div id="toast" class="toast"></div>
+
+    <div class="confirmation-overlay" id="confirmationModal" aria-hidden="true">
+      <div class="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle">
+        <button class="confirmation-close" id="confirmationClose" type="button" aria-label="Close confirmation">&times;</button>
+        <div class="confirmation-check" aria-hidden="true">✓</div>
+        <p class="confirmation-eyebrow">Success</p>
+        <h2 id="confirmationTitle">Appointment Request Submitted Successfully</h2>
+        <p class="confirmation-subtitle">Your appointment request has been received successfully. Please keep your Patient ID for your records.</p>
+        <div class="patient-id-box">
+          <span>Patient ID</span>
+          <strong id="confirmationPatientId">LC-00000000-0000</strong>
+        </div>
+        <div class="confirmation-details">
+          <div><span>Patient</span><strong id="confirmationPatientName">—</strong></div>
+          <div><span>Doctor</span><strong id="confirmationDoctor">—</strong></div>
+          <div><span>Department</span><strong id="confirmationDepartment">—</strong></div>
+          <div><span>Date</span><strong id="confirmationDate">—</strong></div>
+          <div><span>Time</span><strong id="confirmationTime">—</strong></div>
+        </div>
+        <button class="confirmation-done" id="confirmationDone" type="button">Done</button>
+      </div>
+    </div>
+
+<script src="js/doctors.js"></script>
+<script src="js/app.js"></script>
+</body></html>
